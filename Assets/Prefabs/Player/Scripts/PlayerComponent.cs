@@ -24,12 +24,8 @@ public class PlayerComponent : Character {
 
 		if (Input.GetMouseButtonDown (0))
 		{
-			var mousePosition = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			var characterPosition = (Vector2) transform.position;
-
-			var angle = Utils.AngleBetweenVector2 (characterPosition,mousePosition);
-
-			Attack (Quaternion.Euler(new Vector3(0,0,angle)));
+			var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			Attack (mousePosition);
 		}
 
 		if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)

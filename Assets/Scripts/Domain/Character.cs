@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using AssemblyCSharp;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,9 +30,13 @@ public class Character : MonoBehaviour {
 		Alive = true;
 	}
 
-	public void Attack(Quaternion quaternion) {
+	public void Attack(Vector2 target) {
 
-		GameObject attackInstantiated = null;
+        var characterPosition = (Vector2)transform.position;
+        var angle = Utils.AngleBetweenVector2(characterPosition, target);
+        var quaternion = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        GameObject attackInstantiated = null;
 
 		if (Time.time > nextAttack) {
 			

@@ -16,18 +16,6 @@ public class AttackEffectComponent : MonoBehaviour {
 		myRigidBody = GetComponent<Rigidbody2D>();
 		myRigidBody.velocity = transform.right * speed;
 		initTime = Time.time;
-
-		//TestMode
-		var parent = this.gameObject.transform.parent.gameObject;
-		var character = parent.GetComponent<Character> ();
-
-		if (character.Fighter.Range == 2) {
-			timeLife = 0.125f;
-		} else if (character.Fighter.Range == 20) {
-			timeLife = 1.25f;
-		}
-		//End TestMode
-
 	}
 	
 	// Update is called once per frame
