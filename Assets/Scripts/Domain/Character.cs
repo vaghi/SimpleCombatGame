@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour
+{
 
 	public const int InitialHealth = 1000;
 	public const int InitialLevel = 1;
@@ -24,32 +25,43 @@ public class Character : MonoBehaviour {
 	private float nextAttack;
 	private float nextHeal;
 
-	public Character() {
+	public Character()
+	{
 		Health = InitialHealth;
 		Level = InitialLevel;
 		Alive = true;
 	}
 
-	public void Attack(Vector2 target) {
-
+	public bool Attack(Vector2 target)
+	{
         var characterPosition = (Vector2)transform.position;
+
+		if(Vector2.Distance(characterPosition, target) > Fighter.Range)
+		{
+			return false;
+		}
+
         var angle = Utils.AngleBetweenVector2(characterPosition, target);
         var quaternion = Quaternion.Euler(new Vector3(0, 0, angle));
 
         GameObject attackInstantiated = null;
 
-		if (Time.time > nextAttack) {
-			
+		if (Time.time > nextAttack && attack != null)
+		{
 			attackInstantiated = Instantiate (attack, attackSpawn.position, quaternion);
 			
 			nextAttack = Time.time + AttackRate;
 
 			attackInstantiated.transform.SetParent(gameObject.transform);
 		}
+
+		return true;
 	}
 
-	public void HealCharacter(Character target) {
-		if (IsEnemy(target) || !target.Alive) {
+	public void HealCharacter(Character target)
+	{
+		if (IsEnemy(target) || !target.Alive)
+		{
 			return;
 		}
 
@@ -57,14 +69,17 @@ public class Character : MonoBehaviour {
 		target.Health = target.Health + heal >= InitialHealth ? InitialHealth : target.Health + heal;
 	}
 
-	public void DamageCharacter(Character target) {
-		if (this.gameObject.GetInstanceID() == target.gameObject.GetInstanceID()) {
+	public void DamageCharacter(Character target)
+	{
+		if (this.gameObject.GetInstanceID() == target.gameObject.GetInstanceID())
+		{
 			return;
 		}
 
 		double damage = Level * LevelMultiplicator;
 
-		if (target.Level - 5 >= this.Level) {
+		if (target.Level - 5 >= this.Level)
+		{
 			damage = damage * 0.5;
 		}
 		else if (target.Level + 5 <= this.Level)
@@ -74,7 +89,8 @@ public class Character : MonoBehaviour {
 
 		target.Health = damage <= target.Health ? target.Health - (int) damage : 0;
 
-		if (target.Health.Equals(0)) {
+		if (target.Health.Equals(0))
+		{
 			KillCharacter (target);
 			this.Level++;
 		}

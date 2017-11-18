@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraComponent : MonoBehaviour {
+public class CameraComponent : MonoBehaviour
+{
 
 	public GameObject followTarget;
 	public float moveSpeed;
@@ -11,12 +12,14 @@ public class CameraComponent : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		targetPos = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, targetPos, moveSpeed * Time.deltaTime);
 	}

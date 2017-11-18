@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NpcComponent : Character {
+public class NpcComponent : Character
+{
 
 	public float moveSpeed;
 	public float timeBetweenMove;
@@ -42,7 +43,9 @@ public class NpcComponent : Character {
 				timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
 			}
 
-		} else {
+		}
+		else
+		{
 			timeBetweenMoveCounter -= Time.deltaTime;
 			myRigidBody.velocity = Vector3.zero;
 

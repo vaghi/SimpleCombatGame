@@ -4,10 +4,11 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 
-public class IterationOneTest {
-
+public class IterationOneTest
+{
 	[Test]
-	public void NewCharacterInitialHealth() {
+	public void NewCharacterInitialHealth()
+	{
 		GameObject newGameObject = new GameObject ();
 		var newCharacter = newGameObject.AddComponent<Character> ();
 
@@ -15,7 +16,8 @@ public class IterationOneTest {
 	}
 
 	[Test]
-	public void NewCharacterInitialLevel() {
+	public void NewCharacterInitialLevel()
+	{
 		GameObject newGameObject = new GameObject ();
 		var newCharacter = newGameObject.AddComponent<Character> ();
 
@@ -23,7 +25,8 @@ public class IterationOneTest {
 	}
 
 	[Test]
-	public void NewCharacterInitialAlive() {
+	public void NewCharacterInitialAlive()
+	{
 		GameObject newGameObject = new GameObject ();
 		var newCharacter = newGameObject.AddComponent<Character> ();
 
@@ -31,7 +34,8 @@ public class IterationOneTest {
 	}
 
 	[Test]
-	public void DamageHealth() {
+	public void DamageHealth()
+	{
 		
 		GameObject attacker = new GameObject ();
 		var attackerCharacter = attacker.AddComponent<Character> ();
@@ -45,14 +49,16 @@ public class IterationOneTest {
 	}
 
 	[Test]
-	public void KillCharacter() {
+	public void KillCharacter()
+	{
 		GameObject attacker = new GameObject ();
 		var attackerCharacter = attacker.AddComponent<Character> ();
 
 		GameObject target = new GameObject ();
 		var targetCharacter = target.AddComponent<Character> ();
 
-		while (targetCharacter.Health > 0) {
+		while (targetCharacter.Health > 0)
+		{
 			attackerCharacter.DamageCharacter(targetCharacter);
 		}
 
@@ -61,35 +67,32 @@ public class IterationOneTest {
 	}
 
 	[Test]
-	public void HealCharacter() {
+	public void HealCharacter()
+	{
 		GameObject healer = new GameObject ();
 		var healerCharacter = healer.AddComponent<Character> ();
 
-		GameObject healed = new GameObject ();
-		var healedCharacter = healed.AddComponent<Character> ();
+		healerCharacter.Health = 100;
 
-		healedCharacter.Health = 100;
-
-		healerCharacter.HealCharacter(healedCharacter);
-		Assert.AreEqual(healedCharacter.Health, 100 + healerCharacter.Level * Character.LevelMultiplicator);
+		healerCharacter.HealCharacter(healerCharacter);
+		Assert.AreEqual(healerCharacter.Health, 100 + healerCharacter.Level * Character.LevelMultiplicator);
 	}
 
 	[Test]
-	public void MaximumHeal() {
+	public void MaximumHeal()
+	{
 		GameObject healer = new GameObject ();
 		var healerCharacter = healer.AddComponent<Character> ();
 
-		GameObject healed = new GameObject ();
-		var healedCharacter = healed.AddComponent<Character> ();
+		healerCharacter.Health = 999;
 
-		healedCharacter.Health = 999;
-
-		healerCharacter.HealCharacter(healedCharacter);
-		Assert.AreEqual(healedCharacter.Health, 1000);
+		healerCharacter.HealCharacter(healerCharacter);
+		Assert.AreEqual(healerCharacter.Health, 1000);
 	}
 
 	[Test]
-	public void MaximumHealTop() {
+	public void MaximumHealTop()
+	{
 		GameObject healer = new GameObject ();
 		var healerCharacter = healer.AddComponent<Character> ();
 
