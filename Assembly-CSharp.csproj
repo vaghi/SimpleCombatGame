@@ -55,6 +55,7 @@
      <Compile Include="Assets\Prefabs\Player\Scripts\CameraComponent.cs" />
      <Compile Include="Assets\Prefabs\Player\Scripts\PlayerComponent.cs" />
      <Compile Include="Assets\Prefabs\VFX\Scripts\AttackEffectComponent.cs" />
+     <Compile Include="Assets\Scripts\Controllers\GUIComponent.cs" />
      <Compile Include="Assets\Scripts\Controllers\MainComponent.cs" />
      <Compile Include="Assets\Scripts\Controllers\Utils.cs" />
      <Compile Include="Assets\Scripts\Domain\Character.cs" />

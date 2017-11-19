@@ -6,6 +6,7 @@ using AssemblyCSharp;
 
 public class PlayerComponent : Character {
 
+	public bool Enabled;
 	public float moveSpeed;
 
 	private bool playerMoving;
@@ -22,6 +23,11 @@ public class PlayerComponent : Character {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (!Enabled)
+		{
+			return;
+		}
+
 		playerMoving = false;
 
 		if (Input.GetMouseButtonDown (0))

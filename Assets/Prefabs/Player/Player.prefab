@@ -35,10 +35,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4020357532053500}
   - component: {fileID: 212555957708759240}
-  - component: {fileID: 114862733309239792}
   - component: {fileID: 95562748600096236}
   - component: {fileID: 61068905812075582}
   - component: {fileID: 50396122602615840}
+  - component: {fileID: 114624610328883290}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772206036703528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.67, y: 2.52, z: 0}
+  m_LocalPosition: {x: -1.04, y: 2.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4034992766020530}
@@ -135,7 +135,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114862733309239792
+--- !u!114 &114624610328883290
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -152,7 +152,8 @@ MonoBehaviour:
   Level: 1
   Alive: 1
   AttackRate: 0.25
-  HealRate: 0
+  HealRate: 0.5
+  Enabled: 0
   moveSpeed: 5
 --- !u!212 &212555957708759240
 SpriteRenderer:

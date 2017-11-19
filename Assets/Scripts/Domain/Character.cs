@@ -52,6 +52,8 @@ public class Character : MonoBehaviour
 			
 			nextAttack = Time.time + AttackRate;
 
+			var attackComponent = attackInstantiated.GetComponent<AttackEffectComponent> ();
+			attackComponent.originPosition = characterPosition;
 			attackInstantiated.transform.SetParent(gameObject.transform);
 		}
 
