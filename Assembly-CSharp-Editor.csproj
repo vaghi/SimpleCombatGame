@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Tests\Editor\IterationFour.cs" />
      <Compile Include="Assets\Scripts\Tests\Editor\IterationOne.cs" />
      <Compile Include="Assets\Scripts\Tests\Editor\IterationThree.cs" />
      <Compile Include="Assets\Scripts\Tests\Editor\IterationTwo.cs" />

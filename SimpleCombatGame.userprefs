@@ -1,16 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Domain\Character.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tests\Editor\IterationFour.cs">
     <Files>
-      <File FileName="Assets\Prefabs\Player\Scripts\PlayerComponent.cs" Line="17" Column="2" />
-      <File FileName="Assets\Scripts\Domain\Character.cs" Line="57" Column="1" />
+      <File FileName="Assets\Scripts\Domain\Fighter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Prefabs\VFX\Scripts\AttackEffectComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Domain\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tests\Editor\IterationFour.cs" Line="55" Column="13" />
+      <File FileName="Assets\Scripts\Tests\Editor\IterationOne.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Material.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\vaghi\Documents\SimpleCombatGame\Assets\Scripts\Domain\Character.cs" line="37" column="1" />
-      <Breakpoint file="C:\Users\vaghi\Documents\SimpleCombatGame\Assets\Scripts\Tests\Editor\IterationThree.cs" line="11" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

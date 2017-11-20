@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Controllers\MainComponent.cs" />
      <Compile Include="Assets\Scripts\Controllers\Utils.cs" />
      <Compile Include="Assets\Scripts\Domain\Character.cs" />
+     <Compile Include="Assets\Scripts\Domain\Factions.cs" />
      <Compile Include="Assets\Scripts\Domain\Fighter.cs" />
      <Compile Include="Assets\Scripts\Domain\Fighters\MeleeFighter.cs" />
      <Compile Include="Assets\Scripts\Domain\Fighters\RangedFighter.cs" />

@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
 	public float AttackRate;
 	public float HealRate;
 	public Fighter Fighter;
+	public List<Faction> Factions;
 
 	protected Animator animator;
 
@@ -30,6 +31,7 @@ public class Character : MonoBehaviour
 		Health = InitialHealth;
 		Level = InitialLevel;
 		Alive = true;
+		Factions = new List<Faction>();
 	}
 
 	public bool Attack(Vector2 target)
@@ -73,7 +75,7 @@ public class Character : MonoBehaviour
 
 	public void DamageCharacter(Character target)
 	{
-		if (this.gameObject.GetInstanceID() == target.gameObject.GetInstanceID())
+		if (this.gameObject.GetInstanceID() == target.gameObject.GetInstanceID() || !IsEnemy(target))
 		{
 			return;
 		}
@@ -104,8 +106,35 @@ public class Character : MonoBehaviour
 		target.gameObject.SetActive(false);
 	}
 
-	private bool IsEnemy(Character other)
+	public void JoinFaction(Faction faction)
 	{
-		return other.GetInstanceID() != this.GetInstanceID();
+		if(!Factions.Contains(faction))
+			Factions.Add(faction);
+	}
+
+	public void LeaveFaction(Faction faction)
+	{
+		if(Factions.Contains(faction))
+			Factions.Remove(faction);
+	}
+
+	public bool SharesFaction(Character other)
+	{
+		var otherFactions = other.Factions;
+
+		foreach(Faction f in otherFactions)
+		{
+			if (this.Factions.Contains (f))
+				return true;
+		}
+
+		return false;
+	}
+
+	public bool IsEnemy(Character other)
+	{
+		bool isOtherCharacter = other.GetInstanceID() != this.GetInstanceID();
+
+		return isOtherCharacter && !SharesFaction(other);
 	}
 }
