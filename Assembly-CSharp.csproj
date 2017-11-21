@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Domain\Fighter.cs" />
      <Compile Include="Assets\Scripts\Domain\Fighters\MeleeFighter.cs" />
      <Compile Include="Assets\Scripts\Domain\Fighters\RangedFighter.cs" />
+     <Compile Include="Assets\Scripts\Domain\InteractibleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />

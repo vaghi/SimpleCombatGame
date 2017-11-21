@@ -1,0 +1,1 @@
+C:\Users\vaghi\Documents\SimpleCombatGame\obj\Release\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache

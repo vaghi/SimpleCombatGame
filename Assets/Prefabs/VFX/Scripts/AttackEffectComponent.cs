@@ -24,10 +24,6 @@ public class AttackEffectComponent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*if (Time.time > initTime + timeLife) {
-			Destroy (this.gameObject);
-		}*/
-
 		var range = parentCharacter.Fighter.Range;
 
 		if (Vector2.Distance (originPosition, this.transform.position) > range)
@@ -38,9 +34,17 @@ public class AttackEffectComponent : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (parent.GetInstanceID() != other.gameObject.GetInstanceID()) {
-			var characterTarget = other.gameObject.GetComponent<Character> ();
+
+			var otherGameObject = other.gameObject;
+
+			var characterTarget = otherGameObject.GetComponent<Character> ();
 			if (characterTarget != null) {
 				parentCharacter.DamageCharacter(characterTarget);
+			}
+			else if(otherGameObject.GetComponent<InteractibleObject>() != null)
+			{
+				var interactibleObject = otherGameObject.GetComponent<InteractibleObject> ();
+				var u = interactibleObject.Health;
 			}
 		}
 	}

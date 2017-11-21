@@ -8,7 +8,7 @@ public class Character : MonoBehaviour
 
 	public const int InitialHealth = 1000;
 	public const int InitialLevel = 1;
-	public const int LevelMultiplicator = 50;
+	public const int LevelMultiplicator = 20;
 
 	public GameObject attack;
 	public Transform attackSpawn;
@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
 	public float HealRate;
 	public Fighter Fighter;
 	public List<Faction> Factions;
-
+		
 	protected Animator animator;
 
 	private float nextAttack;
@@ -80,15 +80,15 @@ public class Character : MonoBehaviour
 			return;
 		}
 
-		double damage = Level * LevelMultiplicator;
+		double damage = DamageQuantity();
 
 		if (target.Level - 5 >= this.Level)
 		{
-			damage = damage * 0.5;
+			damage *= 0.5;
 		}
 		else if (target.Level + 5 <= this.Level)
 		{
-			damage = damage * 1.5;
+			damage *= 1.5;
 		}
 
 		target.Health = damage <= target.Health ? target.Health - (int) damage : 0;
@@ -97,6 +97,16 @@ public class Character : MonoBehaviour
 		{
 			KillCharacter (target);
 			this.Level++;
+		}
+	}
+
+	public void DamageObject(InteractibleObject iObject)
+	{
+		iObject.Health = DamageQuantity () <= iObject.Health ? iObject.Health - DamageQuantity () : 0;
+
+		if (iObject.Health.Equals (0))
+		{
+			DestroyImmediate(iObject.gameObject);
 		}
 	}
 
@@ -136,5 +146,25 @@ public class Character : MonoBehaviour
 		bool isOtherCharacter = other.GetInstanceID() != this.GetInstanceID();
 
 		return isOtherCharacter && !SharesFaction(other);
+	}
+
+	public int DamageQuantity()
+	{
+		var damage = Level * Character.LevelMultiplicator;
+
+		if (Fighter != null)
+			damage *= Fighter.Damage;
+		
+		return damage;
+	}
+
+	public int HealQuantity()
+	{
+		var heal = Level * Character.LevelMultiplicator;
+
+		if (Fighter != null)
+			heal *= Fighter.Damage;
+		
+		return heal;
 	}
 }

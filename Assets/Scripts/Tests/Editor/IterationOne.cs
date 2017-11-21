@@ -12,7 +12,7 @@ public class IterationOneTest
 		GameObject newGameObject = new GameObject ();
 		var newCharacter = newGameObject.AddComponent<Character> ();
 
-		Assert.AreEqual(1000, newCharacter.Health);
+		Assert.AreEqual(Character.InitialHealth, newCharacter.Health);
 	}
 
 	[Test]
@@ -45,7 +45,7 @@ public class IterationOneTest
 
 		attackerCharacter.DamageCharacter(targetCharacter);
 
-		Assert.AreEqual(Character.InitialHealth, targetCharacter.Health + attackerCharacter.Level * Character.LevelMultiplicator);
+		Assert.AreEqual(Character.InitialHealth, targetCharacter.Health + attackerCharacter.DamageQuantity());
 	}
 
 	[Test]
@@ -75,7 +75,7 @@ public class IterationOneTest
 		healerCharacter.Health = 100;
 
 		healerCharacter.HealCharacter(healerCharacter);
-		Assert.AreEqual(healerCharacter.Health, 100 + healerCharacter.Level * Character.LevelMultiplicator);
+		Assert.AreEqual(healerCharacter.Health, 100 + healerCharacter.HealQuantity());
 	}
 
 	[Test]
@@ -84,10 +84,10 @@ public class IterationOneTest
 		GameObject healer = new GameObject ();
 		var healerCharacter = healer.AddComponent<Character> ();
 
-		healerCharacter.Health = 999;
+		healerCharacter.Health = Character.InitialHealth - 1;
 
 		healerCharacter.HealCharacter(healerCharacter);
-		Assert.AreEqual(healerCharacter.Health, 1000);
+		Assert.AreEqual(healerCharacter.Health, Character.InitialHealth);
 	}
 
 	[Test]
@@ -100,6 +100,6 @@ public class IterationOneTest
 		var healedCharacter = healed.AddComponent<Character> ();
 
 		healerCharacter.HealCharacter(healedCharacter);
-		Assert.AreEqual(healedCharacter.Health, 1000);
+		Assert.AreEqual(healedCharacter.Health, Character.InitialHealth);
 	}
 }

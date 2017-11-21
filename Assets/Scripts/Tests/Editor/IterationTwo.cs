@@ -26,7 +26,7 @@ public class IterationTwoTest
 		healerCharacter.Health = initialHealth;
 		healerCharacter.HealCharacter(healerCharacter);
 
-		Assert.AreEqual(initialHealth + healerCharacter.Level * Character.LevelMultiplicator, healerCharacter.Health);
+		Assert.AreEqual(initialHealth + healerCharacter.HealQuantity(), healerCharacter.Health);
 	}
 
 	[Test]
@@ -66,13 +66,12 @@ public class IterationTwoTest
 			var damage = initialHealth - targetCharacter.Health;
 
 			if (attackerCharacter.Level <= targetCharacter.Level - 5) {
-				var damageExpected = attackerCharacter.Level * Character.LevelMultiplicator * 0.5;
+				var damageExpected = attackerCharacter.DamageQuantity() * 0.5;
 				Assert.AreEqual (damage, damageExpected);
 			}
 			else
 			{
-				var damageExpected = attackerCharacter.Level * Character.LevelMultiplicator;
-				Assert.AreEqual (damage, damageExpected);
+				Assert.AreEqual (damage, attackerCharacter.DamageQuantity());
 			}
 		}
 	}
@@ -97,13 +96,12 @@ public class IterationTwoTest
 			var damaged = initialHealth - targetCharacter.Health;
 
 			if (attackerCharacter.Level >= targetCharacter.Level + 5) {
-				var damageExpected = attackerCharacter.Level * Character.LevelMultiplicator * 1.5;
+				var damageExpected = attackerCharacter.DamageQuantity() * 1.5;
 				Assert.AreEqual (damaged, damageExpected);
 			}
 			else
 			{
-				var damageExpected = attackerCharacter.Level * Character.LevelMultiplicator;
-				Assert.AreEqual (damaged, damageExpected);
+				Assert.AreEqual (damaged, attackerCharacter.DamageQuantity());
 			}
 		}
 	}

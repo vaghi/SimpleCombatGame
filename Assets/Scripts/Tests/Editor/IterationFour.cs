@@ -108,5 +108,35 @@ public class IterationFourTest
 
 		Assert.AreEqual(Character.InitialHealth, allyCharacter.Health);
 	}
+
+	[Test]
+	public void CanDamageThings()
+	{
+		GameObject attacker = new GameObject ();
+		var attackerCharacter = attacker.AddComponent<Character>();
+
+		GameObject gameObjectTarget = new GameObject();
+		var objectTarget = gameObjectTarget.AddComponent<InteractibleObject>();
+		objectTarget.Health = 2000;
+
+		attackerCharacter.DamageObject(objectTarget);
+
+		Assert.AreEqual(2000 - attackerCharacter.DamageQuantity(), objectTarget.Health);
+	}
+
+	[Test]
+	public void CanDestroyThings()
+	{
+		GameObject attacker = new GameObject ();
+		var attackerCharacter = attacker.AddComponent<Character>();
+
+		GameObject gameObjectTarget = new GameObject();
+		var objectTarget = gameObjectTarget.AddComponent<InteractibleObject>();
+		objectTarget.Health = 1;
+
+		attackerCharacter.DamageObject(objectTarget);
+
+		Assert.IsTrue(gameObjectTarget == null);
+	}
 }
 
