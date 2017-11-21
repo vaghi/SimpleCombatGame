@@ -1,17 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tests\Editor\IterationFour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Prefabs\NPC\Scripts\NpcComponent.cs">
     <Files>
-      <File FileName="Assets\Scripts\Domain\Fighter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Prefabs\VFX\Scripts\AttackEffectComponent.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Domain\Character.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tests\Editor\IterationFour.cs" Line="55" Column="13" />
-      <File FileName="Assets\Scripts\Tests\Editor\IterationOne.cs" Line="1" Column="1" />
-      <File FileName="Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Material.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tests\Editor\IterationFour.cs" Line="139" Column="43" />
+      <File FileName="Assets\Prefabs\NPC\Scripts\NpcComponent.cs" Line="77" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\vaghi\Documents\SimpleCombatGame\Assets\Prefabs\VFX\Scripts\AttackEffectComponent.cs" line="36" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

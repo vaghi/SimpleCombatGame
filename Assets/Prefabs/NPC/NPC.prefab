@@ -9,48 +9,77 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1966000202235956}
+  m_RootGameObject: {fileID: 1470708791093072}
   m_IsPrefabParent: 1
---- !u!1 &1966000202235956
+--- !u!1 &1431646086678260
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4832250752441290}
-  - component: {fileID: 212028511435221094}
-  - component: {fileID: 50879868677350984}
-  - component: {fileID: 61280477584330978}
-  - component: {fileID: 114285281693500918}
-  - component: {fileID: 95707856658154256}
+  - component: {fileID: 4220768732876694}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: Attack FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4832250752441290
+--- !u!1 &1470708791093072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4009878672394754}
+  - component: {fileID: 212920920402684842}
+  - component: {fileID: 50457456214400480}
+  - component: {fileID: 61900862570931264}
+  - component: {fileID: 114744415912930592}
+  - component: {fileID: 95258136494227292}
+  m_Layer: 0
+  m_Name: NPC
+  m_TagString: Character
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4009878672394754
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966000202235956}
+  m_GameObject: {fileID: 1470708791093072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0705225, y: 2.8586586, z: 0}
+  m_LocalPosition: {x: -8.86, y: -4.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4220768732876694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50879868677350984
+--- !u!4 &4220768732876694
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1431646086678260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4009878672394754}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50457456214400480
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966000202235956}
+  m_GameObject: {fileID: 1470708791093072}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -64,12 +93,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61280477584330978
+--- !u!61 &61900862570931264
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966000202235956}
+  m_GameObject: {fileID: 1470708791093072}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -89,13 +118,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.88416433, y: 0.51276374}
   m_EdgeRadius: 0
---- !u!95 &95707856658154256
+--- !u!95 &95258136494227292
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966000202235956}
+  m_GameObject: {fileID: 1470708791093072}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f4d0a6ac0ac83194b825936951f1c2bc, type: 2}
@@ -106,41 +135,34 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114285281693500918
+--- !u!114 &114744415912930592
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966000202235956}
+  m_GameObject: {fileID: 1470708791093072}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0e9cd4b790a3fb4bb145424da89cc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 0}
-  attackSpawn: {fileID: 0}
+  attack: {fileID: 1654668326488394, guid: aa223875af2e1cd4d8b5c1a5aa51a73c, type: 2}
+  attackSpawn: {fileID: 4220768732876694}
   Health: 1000
   Level: 1
   Alive: 1
-  AttackRate: 0
-  HealRate: 0
-  animator: {fileID: 0}
-  nextAttack: 0
-  nextHeal: 0
+  AttackRate: 0.25
+  HealRate: 0.5
+  Factions: 
   moveSpeed: 4
   timeBetweenMove: 2
   timeToMove: 1
-  myRigidBody: {fileID: 0}
-  moving: 0
-  moveDirection: {x: 0, y: 0, z: 0}
-  timeBetweenMoveCounter: 0
-  timeToMoveCounter: 0
---- !u!212 &212028511435221094
+--- !u!212 &212920920402684842
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966000202235956}
+  m_GameObject: {fileID: 1470708791093072}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

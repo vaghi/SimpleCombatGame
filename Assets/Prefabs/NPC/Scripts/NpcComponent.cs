@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class NpcComponent : Character
 {
+	public const int RangeOfActivation = 5;
 
 	public float moveSpeed;
 	public float timeBetweenMove;
@@ -21,14 +23,20 @@ public class NpcComponent : Character
 		myRigidBody = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 
+		Fighter = new RangedFighter();
+
 		timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
 		timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		var nearEnemy = IsAnEnemyInRange();
+
+		if (nearEnemy != null)
+			Attack(nearEnemy.transform.position);
+
 		if (moving)
 		{
 			timeToMoveCounter -= Time.deltaTime;
@@ -42,7 +50,6 @@ public class NpcComponent : Character
 
 				timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
 			}
-
 		}
 		else
 		{
@@ -64,5 +71,24 @@ public class NpcComponent : Character
 		}
 
 		animator.SetBool("Moving" , moving);
+	}
+
+	private GameObject IsAnEnemyInRange()
+	{
+		var objectsWithTag = GameObject.FindGameObjectsWithTag("Character");
+
+		GameObject enemyInRange = null;
+		foreach (GameObject obj in objectsWithTag)
+		{
+			if(obj.GetInstanceID () == this.gameObject.GetInstanceID ())
+				continue;
+
+			if(enemyInRange == null && Vector2.Distance(transform.position, obj.transform.position) <= RangeOfActivation)
+				enemyInRange = obj;
+			else if(enemyInRange != null && Vector3.Distance(transform.position, obj.transform.position) <= Vector3.Distance(transform.position, enemyInRange.transform.position))
+				enemyInRange = obj;
+		}
+
+		return enemyInRange;
 	}
 }

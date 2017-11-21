@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114624610328883290}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   Alive: 1
   AttackRate: 0.25
   HealRate: 0.5
+  Factions: 
   Enabled: 0
   moveSpeed: 5
 --- !u!212 &212555957708759240
