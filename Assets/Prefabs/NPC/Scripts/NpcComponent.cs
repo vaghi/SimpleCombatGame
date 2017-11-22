@@ -8,8 +8,11 @@ public class NpcComponent : Character
 	public const int RangeOfActivation = 5;
 
 	public float moveSpeed;
+
 	public float timeBetweenMove;
 	public float timeToMove;
+	public float timeBetweenMoveAttacking;
+	public float timeToMoveAttacking;
 
 	private Rigidbody2D myRigidBody;
 	private bool moving;
@@ -56,7 +59,7 @@ public class NpcComponent : Character
 			timeBetweenMoveCounter -= Time.deltaTime;
 			myRigidBody.velocity = Vector3.zero;
 
-			if (timeBetweenMoveCounter < 0f)
+			if (timeBetweenMoveCounter < 0f || nearEnemy != null)
 			{
 				moving = true;
 				timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);

@@ -54,6 +54,7 @@
      <Compile Include="Assets\Prefabs\NPC\Scripts\NpcComponent.cs" />
      <Compile Include="Assets\Prefabs\Player\Scripts\CameraComponent.cs" />
      <Compile Include="Assets\Prefabs\Player\Scripts\PlayerComponent.cs" />
+     <Compile Include="Assets\Prefabs\Player\Scripts\UIComponent.cs" />
      <Compile Include="Assets\Prefabs\VFX\Scripts\AttackEffectComponent.cs" />
      <Compile Include="Assets\Scripts\Controllers\GUIComponent.cs" />
      <Compile Include="Assets\Scripts\Controllers\MainComponent.cs" />
