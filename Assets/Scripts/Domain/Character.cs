@@ -62,6 +62,16 @@ public class Character : MonoBehaviour
 		return true;
 	}
 
+	public void OnMouseOver()
+	{
+		GameObject player = GameObject.Find("Player");
+		Character playerCharacter = player.GetComponent<Character>();
+		if (Input.GetMouseButtonDown (1) && !IsEnemy(playerCharacter))
+		{
+			HealCharacter (this);
+		}
+	}
+
 	public void HealCharacter(Character target)
 	{
 		if (IsEnemy(target) || !target.Alive)

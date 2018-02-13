@@ -8,6 +8,7 @@ public class UIComponent : MonoBehaviour {
 	public PlayerComponent player;
 	public Slider healthBar;
 	public Text healthText;
+	public Text levelText;
 
 	// Use this for initialization
 	void Start () {
@@ -18,5 +19,7 @@ public class UIComponent : MonoBehaviour {
 	void Update () {
 		healthBar.value = player.Health;
 		healthText.text = "HP: " + player.Health + "/" + healthBar.maxValue;
+
+		levelText.text = "Level: " + player.Level;
 	}
 }
